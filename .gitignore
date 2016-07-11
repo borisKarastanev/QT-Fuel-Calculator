@@ -1,0 +1,12 @@
+# ignore all hiddens
+.*
+
+# but don't ignore the .gitignore
+!.gitignore
+
+# ignore all backup files
+*~
+
+# ignore .idea folder
+.idea/
+
