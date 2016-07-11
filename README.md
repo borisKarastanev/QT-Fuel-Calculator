@@ -33,6 +33,21 @@ Example:
 * `Qt - a cross-platform application framework: ` [https://www.qt.io/](https://www.qt.io/) 
 * `Open Source Operating System - more at: ` [https://www.suse.com/](https://www.suse.com/)
 
+### What's to come in future releses
+
+#### v1.0.0 -> v2.0.0
+
+* `Check and warn user for empty imput fields`
+* `Check and warn user for invalid input data`
+* `Add settings page`
+* `Add MPG feature`
+* `Integate app with SQLite3 Database`
+* `Improve UI`
+
+Enjoy :)
+
+
+
 
 
 
