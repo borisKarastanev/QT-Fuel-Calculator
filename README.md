@@ -37,8 +37,8 @@ Example:
 
 #### v1.0.0 -> v2.0.0
 
-* `Check and warn user for empty imput fields`
-* `Check and warn user for invalid input data`
+* `Check and warn user for empty imput fields` Done
+* `Check and warn user for invalid input data` Done
 * `Add settings page`
 * `Add MPG feature`
 * `Integate app with SQLite3 Database`

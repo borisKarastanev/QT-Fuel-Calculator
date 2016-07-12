@@ -6,8 +6,9 @@ Calculator::Calculator(QWidget *parent) :
     ui(new Ui::Calculator)
 {
     ui->setupUi(this);
-    ui->clearBtn->setVisible(false);
-    this->clerResult();
+    ui->distance->setValidator(new QDoubleValidator(1.00, 10000.00, 2, this)); // Validate user input
+    ui->fuel->setValidator(new QDoubleValidator(1.00, 10000.00, 2, this)); // Validate user input
+
 }
 
 Calculator::~Calculator()
@@ -23,11 +24,16 @@ float Calculator::calculateInKm(){
     QString distanceVal = ui->distance->text();
     QString fuelVal = ui->fuel->text();
 
-    //Convert values
-    float usedFuel = fuelVal.toFloat();
-    float traveledD = distanceVal.toFloat();
-    float result = usedFuel / traveledD * 100;
-    return result;
+    if (distanceVal.isEmpty() || fuelVal.isEmpty()) {
+        // prompt user to  enter valid value
+        return 0;
+    } else {
+        //Convert values
+        float usedFuel = fuelVal.toFloat();
+        float traveledD = distanceVal.toFloat();
+        float result = usedFuel / traveledD * 100;
+        return result;
+    }
 }
 
 /**
@@ -37,7 +43,6 @@ float Calculator::calculateInKm(){
 void Calculator::showResult() {
     float result = this->calculateInKm();
     ui->resultBox->display(result);
-    ui->clearBtn->setVisible(true);
 }
 /**
  * @brief Calculator::clerResult
@@ -47,7 +52,6 @@ void Calculator::clerResult() {
     ui->fuel->clear();
     ui->distance->clear();
     ui->resultBox->display(0);
-    ui->clearBtn->setVisible(false);
 }
 /**
  * @brief Calculator::on_calculateBtn_clicked
